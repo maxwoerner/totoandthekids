@@ -1,0 +1,12 @@
+---
+- name: Durlacher Altstadtfest
+  date: Freitag, 12. Juli 2024
+  time: 20 Uhr
+  link: https://www.altstadtfest-durlach.de/programm/
+- name: Durlacher Altstadtfest
+  date: Samstag, 13. Juli 2024
+  time: 20 Uhr
+  link: https://www.altstadtfest-durlach.de/programm/
+- name: Test Gig
+  date: Test Date
+  time: Test Time
