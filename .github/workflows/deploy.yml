@@ -28,8 +28,8 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.yourserver.com
-          username: ${{ secrets.ftp_user }}
-          password: ${{ secrets.ftp_password }}
+          server: ftp.mxwebdesign.de
+          username: ${{ secrets.allinkl_ftp_user }}
+          password: ${{ secrets.allinkl_ftp_password }}
           local-dir: ./dist/
-          server-dir: /your/site/
+          server-dir: /sites/totoandthekids/
