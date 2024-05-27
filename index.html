@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="de">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -245,55 +245,34 @@
                     </th>
                   </tr>
                 </thead> -->
-                  <tbody class="divide-y divide-gray-600">
-                    <tr>
-                      <td
-                        class="whitespace-nowrap py-8 pl-4 pr-3 text-gray-300 sm:pl-8"
-                      >
-                        Freitag, 12. Juli 2024
-                      </td>
-                      <td
-                        class="whitespace-nowrap px-3 py-8 text-gray-100 font-semibold"
-                      >
-                        Durlacher Altstadtfest
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-8 text-gray-300">
-                        Karlsruhe, Durlach
-                      </td>
-                      <td
-                        class="relative whitespace-nowrap py-8 pl-3 pr-4 text-right font-medium sm:pr-8"
-                      >
-                        <a
-                          href="#"
-                          class="px-5 py-2 text-sm text-gray-300 hover:text-gray-400 border border-gray-400 hover:border-gray-500"
-                          >Weitere Infos</a
+                  <tbody x-data="gigList" class="divide-y divide-gray-600">
+                    <template x-for="gig in gigs">
+                      <tr>
+                        <td
+                          class="whitespace-nowrap py-8 pl-4 pr-3 text-gray-300 sm:pl-8"
+                          x-text="gig.date"
+                        ></td>
+                        <td
+                          class="whitespace-nowrap px-3 py-8 text-gray-100 font-semibold"
+                          x-text="gig.name"
                         >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="whitespace-nowrap py-8 pl-4 pr-3 text-gray-300 sm:pl-8"
-                      >
-                        Freitag, 12. Juli 2024
-                      </td>
-                      <td
-                        class="whitespace-nowrap px-3 py-8 text-gray-100 font-semibold"
-                      >
-                        Durlacher Altstadtfest
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-8 text-gray-300">
-                        Karlsruhe, Durlach
-                      </td>
-                      <td
-                        class="relative whitespace-nowrap py-8 pl-3 pr-4 text-right font-medium sm:pr-8"
-                      >
-                        <a
-                          href="#"
-                          class="px-5 py-2 text-sm text-gray-300 hover:text-gray-400 border border-gray-400 hover:border-gray-500"
-                          >Weitere Infos</a
+                          Durlacher Altstadtfest
+                        </td>
+                        <td
+                          class="whitespace-nowrap px-3 py-8 text-gray-300"
+                          x-text="gig.location"
+                        ></td>
+                        <!-- <td
+                          class="relative whitespace-nowrap py-8 pl-3 pr-4 text-right font-medium sm:pr-8"
                         >
-                      </td>
-                    </tr>
+                          <a
+                            href="#"
+                            class="px-5 py-2 text-sm text-gray-300 hover:text-gray-400 border border-gray-400 hover:border-gray-500"
+                            >Weitere Infos</a
+                          >
+                        </td> -->
+                      </tr>
+                    </template>
                   </tbody>
                 </table>
               </div>
@@ -346,7 +325,10 @@
             </svg>
           </a>
 
-          <a href="#" class="text-gray-300 hover:text-gray-400">
+          <a
+            href="https://www.youtube.com/@totoandthekids"
+            class="text-gray-300 hover:text-gray-400"
+          >
             <span class="sr-only">YouTube</span>
             <svg
               class="h-6 w-6"
@@ -372,5 +354,26 @@
     </footer>
 
     <script type="module" src="/main.js"></script>
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("gigList", () => ({
+          gigs: [
+            {
+              name: "Durlacher Altstadtfest",
+              date: "Freitag, 12. Juli 2024",
+              location: "Karlsruhe, Durlach",
+              link: "#",
+            },
+            {
+              name: "Durlacher Altstadtfest",
+              date: "Samstag, 13. Juli 2024",
+              location: "Karlsruhe, Durlach",
+              link: "#",
+            },
+          ],
+        }));
+      });
+    </script>
   </body>
 </html>
