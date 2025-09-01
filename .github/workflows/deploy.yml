@@ -26,7 +26,7 @@ jobs:
           npm ci
           npm run build --if-present
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ftp.mxwebdesign.de
           username: ${{ secrets.allinkl_ftp_user }}
